@@ -1,7 +1,7 @@
 <template>
   <div class="course-card">
     <div class="course-image-wrapper">
-      <img :src="courseImage" :alt="course.nameRU" class="course-main-image" />
+      <img :src="courseImage" :alt="course.nameRU" class="course-main-image" >
       <h2 class="visually-hidden">{{ course.nameRU }}</h2>
     </div>
 
@@ -30,7 +30,7 @@
             :key="index"
             class="direction-item"
           >
-            <img src="../assets/img/icon/Star.svg" />
+            <img src="../assets/img/icon/Star.svg" >
             {{ direction }}
           </li>
         </ul>
@@ -38,13 +38,13 @@
     </div>
 
     <div class="mobile-image-containe">
-      <img src="../assets/img/course/mobile.png" class="mobile-image" />
+      <img src="../assets/img/course/mobile.png" class="mobile-image" >
     </div>
 
     <div class="benefits-section">
       <div class="content-wrapper">
         <h3 class="section-title-benefit">
-          Начните путь<br />
+          Начните путь<br >
           к новому телу:
         </h3>
         <ul class="benefits-list">
@@ -77,8 +77,8 @@
       </div>
 
       <div class="image-overlay">
-        <img src="../assets/img/course/vector.png" class="background-image" />
-        <img src="../assets/img/course/man.png" class="foreground-image" />
+        <img src="../assets/img/course/vector.png" class="background-image" >
+        <img src="../assets/img/course/man.png" class="foreground-image" >
       </div>
     </div>
   </div>

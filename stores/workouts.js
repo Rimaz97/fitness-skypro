@@ -33,7 +33,7 @@ export const useWorkoutsStore = defineStore("workouts", {
             headers: {
               Authorization: `Bearer ${userStore.token}`,
             },
-          }
+          },
         );
 
         this.currentWorkout = response;
@@ -58,16 +58,16 @@ export const useWorkoutsStore = defineStore("workouts", {
             headers: {
               Authorization: `Bearer ${userStore.token}`,
             },
-          }
+          },
         );
 
         const courseWorkouts = await coursesStore.fetchCourseWorkouts(courseId);
         const validWorkoutIds = new Set(
-          courseWorkouts?.map((w) => w._id) || []
+          courseWorkouts?.map((w) => w._id) || [],
         );
         const updatedProgress = {
           workoutsProgress: (response.workoutsProgress || []).filter((wp) =>
-            validWorkoutIds.has(wp.workoutId)
+            validWorkoutIds.has(wp.workoutId),
           ),
           totalWorkouts: courseWorkouts?.length || 0,
         };
@@ -113,7 +113,7 @@ export const useWorkoutsStore = defineStore("workouts", {
             headers: {
               Authorization: `Bearer ${userStore.token}`,
             },
-          }
+          },
         );
       } catch (error) {
         this.error = this.handleError(error);
@@ -139,13 +139,13 @@ export const useWorkoutsStore = defineStore("workouts", {
               Authorization: `Bearer ${userStore.token}`,
             },
             body: JSON.stringify({ progressData }),
-          }
+          },
         );
 
         if (!updatedProgress.ok) {
           const errorData = await updatedProgress.json();
           throw new Error(
-            errorData.message || "Ошибка при сохранении прогресса"
+            errorData.message || "Ошибка при сохранении прогресса",
           );
         }
 
@@ -167,7 +167,7 @@ export const useWorkoutsStore = defineStore("workouts", {
               state.courseProgress[courseId].workoutsProgress;
 
             const workoutIndex = workoutsProgress.findIndex(
-              (wp) => wp.workoutId === workoutId
+              (wp) => wp.workoutId === workoutId,
             );
 
             if (workoutIndex !== -1) {
@@ -216,7 +216,7 @@ export const useWorkoutsStore = defineStore("workouts", {
             headers: {
               Authorization: `Bearer ${userStore.token}`,
             },
-          }
+          },
         );
 
         if (this.workoutProgress[workoutId]) {
@@ -224,7 +224,7 @@ export const useWorkoutsStore = defineStore("workouts", {
             workoutId,
             workoutCompleted: false,
             progressData: new Array(
-              this.workoutProgress[workoutId].progressData.length
+              this.workoutProgress[workoutId].progressData.length,
             ).fill(0),
           };
         }

@@ -3,12 +3,12 @@
     <div class="wrapper">
       <div class="text-container">
         <div class="main-title">
-          Начните заниматься спортом <br />и улучшите качество жизни
+          Начните заниматься спортом <br >и улучшите качество жизни
         </div>
       </div>
 
       <div class="image-container">
-        <img src="/img/message.png" alt="Измени свое тело за полгода" />
+        <img src="/img/message.png" alt="Измени свое тело за полгода" >
       </div>
     </div>
 

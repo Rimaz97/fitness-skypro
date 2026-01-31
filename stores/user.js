@@ -36,7 +36,7 @@ export const useUserStore = defineStore("user", {
               "Content-Type": "",
             },
             body: JSON.stringify({ email, password }),
-          }
+          },
         );
 
         const data = await response.json();
@@ -70,7 +70,7 @@ export const useUserStore = defineStore("user", {
               "Content-Type": "",
             },
             body: JSON.stringify({ email, password }),
-          }
+          },
         );
 
         const data = await response.json();
@@ -102,7 +102,7 @@ export const useUserStore = defineStore("user", {
             headers: {
               Authorization: `Bearer ${this.token}`,
             },
-          }
+          },
         );
 
         const data = await response.json();

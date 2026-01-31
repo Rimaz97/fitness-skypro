@@ -22,7 +22,7 @@ export const useCoursesStore = defineStore("courses", {
       this.loading = true;
       try {
         const response = await $fetch(
-          "https://wedev-api.sky.pro/api/fitness/courses"
+          "https://wedev-api.sky.pro/api/fitness/courses",
         );
         response.forEach((course) => this._addToCache(course));
       } catch (error) {
@@ -40,7 +40,7 @@ export const useCoursesStore = defineStore("courses", {
 
       try {
         const course = await $fetch(
-          `https://wedev-api.sky.pro/api/fitness/courses/${courseId}`
+          `https://wedev-api.sky.pro/api/fitness/courses/${courseId}`,
         );
         this._addToCache(course);
         return course;
@@ -95,7 +95,7 @@ export const useCoursesStore = defineStore("courses", {
               Authorization: `Bearer ${userStore.token}`,
             },
             body: JSON.stringify({ courseId }),
-          }
+          },
         );
 
         return response;
@@ -126,7 +126,7 @@ export const useCoursesStore = defineStore("courses", {
           {
             method: "DELETE",
             headers: { Authorization: `Bearer ${userStore.token}` },
-          }
+          },
         );
       } catch (error) {
         this.userCourses = initialUserCourses;
@@ -156,7 +156,7 @@ export const useCoursesStore = defineStore("courses", {
           {
             method: "POST",
             body: { ids },
-          }
+          },
         );
 
         courses.forEach((course) => this._addToCache(course));
@@ -174,7 +174,7 @@ export const useCoursesStore = defineStore("courses", {
           `https://wedev-api.sky.pro/api/fitness/courses/${courseId}/workouts`,
           {
             headers: { Authorization: `Bearer ${userStore.token}` },
-          }
+          },
         );
 
         if (!Array.isArray(response)) {

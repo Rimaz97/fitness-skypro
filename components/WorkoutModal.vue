@@ -19,13 +19,13 @@
                 src="../assets/img/icon/check.png"
                 alt="галочка"
                 class="status-icon"
-              />
+              >
               <img
                 v-else
                 src="../assets/img/icon/circle.png"
                 alt="пустой кружок"
                 class="status-icon"
-              />
+              >
             </div>
 
             <div>

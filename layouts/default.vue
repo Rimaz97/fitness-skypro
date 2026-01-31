@@ -3,7 +3,7 @@
     <header v-if="!isAuthPage" class="header">
       <div class="header-content">
         <div class="left-section" @click="goToHome">
-          <img src="/img/logo.png" alt="Логотип" class="logo" />
+          <img src="/img/logo.png" alt="Логотип" class="logo" >
           <span class="logo-text">Онлайн-тренировки для занятий дома</span>
         </div>
 
@@ -12,7 +12,7 @@
             <img
               class="desktop-icon"
               src="~/assets/img/icon/Profile-desktop.svg"
-            />
+            >
             <span class="desktop-name">{{ userDisplayName }}</span>
             <svg class="dropdown-icon" viewBox="0 0 10 6" fill="currentColor">
               <path d="M0 0l5 5 5-5" />
@@ -236,7 +236,7 @@ onUnmounted(() => {
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  min-width: 200px;
+  width: 266px;
   z-index: 1001;
   margin-top: 5px;
 }
@@ -279,6 +279,7 @@ onUnmounted(() => {
   cursor: pointer;
   font-weight: 500;
   font-size: 18px;
+  width: 100%;
 }
 
 .custom-btn {

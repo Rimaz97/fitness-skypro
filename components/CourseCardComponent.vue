@@ -9,7 +9,7 @@
               :alt="course.nameRU"
               class="course-image"
               @error="handleImageError"
-            />
+            >
           </div>
         </NuxtLink>
         <button
@@ -22,7 +22,7 @@
             class="add-icon"
             :alt="isLocalAdded || isAdded ? 'Удалить' : 'Добавить'"
             :title="isLocalAdded || isAdded ? 'Удалить курс' : 'Добавить курс'"
-          />
+          >
         </button>
       </div>
 
@@ -33,14 +33,14 @@
 
         <div class="meta-container">
           <div class="meta-item">
-            <img src="../assets/img/icon/Calendar.svg" class="icon" />
+            <img src="../assets/img/icon/Calendar.svg" class="icon" >
             <span class="meta-text"
               >{{ course.durationInDays }} {{ daysText }}</span
             >
           </div>
 
           <div class="meta-item">
-            <img src="../assets/img/icon/Clock.svg" class="icon" />
+            <img src="../assets/img/icon/Clock.svg" class="icon" >
             <span class="meta-text">
               {{ course.dailyDurationInMinutes.from }}-{{
                 course.dailyDurationInMinutes.to
@@ -50,7 +50,7 @@
           </div>
 
           <div class="meta-item difficulty">
-            <img src="../assets/img/icon/Difficulty.svg" class="icon" />
+            <img src="../assets/img/icon/Difficulty.svg" class="icon" >
             <span class="meta-text">{{ formattedDifficulty }}</span>
           </div>
 
@@ -349,25 +349,13 @@ const updateProgress = async () => {
   try {
     const storeData = workoutsStore.courseProgress[courseId.value];
 
-    console.log("Данные прогресса:", storeData);
-
     if (!storeData || !storeData.workoutsProgress) {
-      console.warn("Данные прогресса отсутствуют");
       progressData.value = { completed: 0, total: 0, percentage: 0 };
       return;
     }
 
-    storeData.workoutsProgress.forEach((wp, index) => {
-      console.log(`Тренировка ${index + 1}:`, wp);
-      console.log("workoutCompleted:", wp.workoutCompleted);
-      console.log("progressData:", wp.progressData);
-    });
-
     const validCompleted = storeData.workoutsProgress.filter((wp) => {
-      return (
-        wp.workoutCompleted ||
-        (wp.progressData && wp.progressData.every((v) => v > 0))
-      );
+      return wp.workoutCompleted === true;
     }).length;
 
     progressData.value = {
@@ -381,12 +369,21 @@ const updateProgress = async () => {
             )
           : 0,
     };
-
-    console.log("Обновлённый прогресс:", progressData.value);
   } catch (error) {
     console.error("Ошибка обновления прогресса:", error);
   }
 };
+
+watch(
+  () => workoutsStore.courseProgress[courseId.value],
+  (newProgress) => {
+    if (newProgress && isDataLoaded.value) {
+      updateProgress();
+    }
+  },
+  { deep: true }
+);
+
 </script>
 
 <style scoped>

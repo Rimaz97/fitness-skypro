@@ -13,7 +13,7 @@
 
       <div class="profile-info">
         <div class="avatar">
-          <img src="../assets/img/profile.png" />
+          <img src="../assets/img/profile.png" >
         </div>
 
         <div class="details">

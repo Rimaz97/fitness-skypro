@@ -11,7 +11,7 @@ describe("sortWorkouts", () => {
 
     const sorted = sortWorkouts(workouts);
 
-    expect(sorted.map(w => w.name)).toEqual(["Урок 1", "Урок 2", "Урок 3"]);
+    expect(sorted.map((w) => w.name)).toEqual(["Урок 1", "Урок 2", "Урок 3"]);
   });
 
   it("оставляет элементы без номера в конце", () => {
@@ -23,7 +23,7 @@ describe("sortWorkouts", () => {
 
     const sorted = sortWorkouts(workouts);
 
-    expect(sorted.map(w => w.name)).toEqual([
+    expect(sorted.map((w) => w.name)).toEqual([
       "Урок 1",
       "Урок 2",
       "Без номера",
@@ -39,7 +39,7 @@ describe("sortWorkouts", () => {
 
     const sorted = sortWorkouts(workouts);
 
-    expect(sorted.map(w => w.name)).toEqual([
+    expect(sorted.map((w) => w.name)).toEqual([
       "Урок 1",
       "Без номера A",
       "Без номера B",
@@ -56,7 +56,7 @@ describe("sortWorkouts", () => {
 
     const sorted = sortWorkouts(workouts);
 
-    expect(sorted.map(w => w.name)).toEqual([
+    expect(sorted.map((w) => w.name)).toEqual([
       "Урок 1",
       "День 2",
       "day 3",

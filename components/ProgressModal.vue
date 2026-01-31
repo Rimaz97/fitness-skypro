@@ -18,7 +18,7 @@
             placeholder="0"
             @input="validateInput"
             @keypress="onlyNumbers"
-          />
+          >
           <div v-if="errors[exercise._id]" class="error-message">
             {{ errors[exercise._id] }}
           </div>

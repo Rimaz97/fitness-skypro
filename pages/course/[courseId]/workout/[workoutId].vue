@@ -128,7 +128,7 @@ onMounted(async () => {
 
     if (workoutRes.status === "rejected") {
       throw new Error(
-        "Ошибка загрузки тренировки: " + workoutRes.reason.message
+        "Ошибка загрузки тренировки: " + workoutRes.reason.message,
       );
     }
 
@@ -175,14 +175,14 @@ const progressButtonText = computed(() => {
 
   const isAllZero = progress.value.every((v) => v === 0);
   const isAllCompleted = progress.value.every(
-    (v, i) => v >= workout.value.exercises?.[i]?.quantity || 0
+    (v, i) => v >= workout.value.exercises?.[i]?.quantity || 0,
   );
 
   return isAllZero
     ? "Заполнить свой прогресс"
     : isAllCompleted
-    ? "Прогресс завершён"
-    : "Обновить свой прогресс";
+      ? "Прогресс завершён"
+      : "Обновить свой прогресс";
 });
 
 // Метод для открытия модального окна
@@ -223,7 +223,7 @@ watch(
       progress.value = newProgress.progressData || [];
     }
   },
-  { deep: true }
+  { deep: true },
 );
 </script>
 
@@ -462,7 +462,7 @@ watch(
   }
 
   .exercise-title {
-    font-size: 18px; 
+    font-size: 18px;
     font-weight: 400;
   }
 

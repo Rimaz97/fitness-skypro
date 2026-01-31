@@ -6,7 +6,7 @@
   >
     <div class="modal-content">
       <div class="logo">
-        <img src="/img/logo.png" alt="Logo" />
+        <img src="/img/logo.png" alt="Logo" >
       </div>
 
       <form @submit.prevent="handleSubmit">
@@ -18,14 +18,14 @@
             required
             :class="{ 'error-field': emailError }"
             @input="handleInput"
-          />
+          >
           <input
             v-model="password"
             placeholder="Пароль"
             required
             :class="{ 'error-field': passwordError }"
             @input="handleInput"
-          />
+          >
           <input
             v-if="!isLogin"
             v-model="confirmPassword"
@@ -33,17 +33,11 @@
             required
             :class="{ 'error-field': confirmPasswordError }"
             @input="handleInput"
-          />
+          >
 
           <div v-if="userStore.error" class="error-message">
             {{ errorMessage }}
           </div>
-
-          <button
-            v-if="password.length > 0"
-            type="button"
-            class="password-toggle"
-          />
         </div>
 
         <div class="form-button">
@@ -227,7 +221,7 @@ form {
 input {
   width: 280px;
   height: 52px;
-  padding: 10px;
+  padding: 0 10px;
   border: 1px solid #d0cece;
   border-radius: 8px;
 
