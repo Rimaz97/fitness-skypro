@@ -69,7 +69,6 @@
             ></div>
           </div>
         </div>
-
         <button
           v-if="showTrainingButton"
           class="train-button"
